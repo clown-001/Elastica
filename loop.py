@@ -27,14 +27,14 @@ class Loopcase(
 loop_sim = Loopcase()
 
 # Simulation parameters
-number_of_rotations = 2
+number_of_rotations = 20
 time_start_twist = 0
 time_twist = 100
 time_compression = 250
 time_tension = 250
 time_intev = 100
 final_time = time_compression + time_tension + time_twist + time_intev
-base_length = 12
+base_length = 1.2
 n_elem = 100
 
 dt = 0.0025 * base_length / n_elem  # 1E-2
@@ -44,7 +44,7 @@ rendering_fps = 20
 step_skip = int(1.0 / (rendering_fps * time_step))
 
 # Rest of the rod parameters and construct rod
-base_radius = 0.075
+base_radius = 0.0075
 base_area = np.pi * base_radius ** 2
 volume = base_area * base_length
 mass = 1
@@ -53,7 +53,7 @@ nu = 2.0 / density / base_area
 E = 1e6
 poisson_ratio = 0.5
 shear_modulus = E / (poisson_ratio + 1.0)
-slack = 8
+slack = 0.8
 direction = np.array([0.0, 1.0, 0.0])
 normal = np.array([0.0, 0.0, 1.0])
 start = np.zeros(
